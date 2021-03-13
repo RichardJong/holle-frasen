@@ -4,7 +4,10 @@
       <img src="../assets/box.png" alt="Box" class="" />
       <h1>{{ correct }} / {{ questionCount }} goed!</h1>
     </div>
-    <p>Maar eigenlijk had je ze allemaal goed, want het maakt geen verschil.</p>
+    <p v-if="correct < questionCount">
+      Maar eigenlijk had je ze allemaal goed, want het maakt geen verschil.
+    </p>
+    <p v-if="correct == questionCount">Je bent de slogankampioen!</p>
     <p>Deel je score:</p>
     <div class="share">
       <a
@@ -12,11 +15,11 @@
         class="twitter"
         @click="share()"
       ></a>
-      <a
+      <!-- <a
         href="https://www.facebook.com/dialog/sharedisplay=popup&amp;href=https%3A%2F%2Fwww.hollefrasen.nl"
         class="facebook"
         @click="share()"
-      ></a>
+      ></a> -->
       <a
         :href="`whatsapp://send?text=Ik%20had%20${correct}%20van%20de%20${questionCount}%20partijen%20bij%20de%20slogans%20goed.%20https%3A%2F%2Fwww.hollefrasen.nl`"
         class="whatsapp"

@@ -36,7 +36,7 @@ export default {
       view: 'start',
       questionIndex: 0,
       correct: 0,
-      questions: [
+      questions: this.shuffleArray([
         {
           slogan: 'Samen sterker verder.',
           options: ['vvd', 'pvda', 'cda', 'd66'],
@@ -52,7 +52,17 @@ export default {
           options: ['vvd', 'pvda', 'cda', 'd66'],
           correct: 'd66',
         },
-      ],
+        {
+          slogan: 'Wij gaan het doen',
+          options: ['cda', 'fvd', 'sp', 'denk'],
+          correct: 'fvd',
+        },
+        {
+          slogan: 'Nederland weer van ons allemaal',
+          options: ['pvv', 'fvd', 'vvd', 'denk'],
+          correct: 'denk',
+        },
+      ]),
     };
   },
   computed: {
@@ -61,6 +71,9 @@ export default {
     },
   },
   methods: {
+    shuffleArray(arr) {
+      return arr.sort(() => Math.random() - 0.5);
+    },
     start() {
       console.log('test start');
       this.view = 'question';

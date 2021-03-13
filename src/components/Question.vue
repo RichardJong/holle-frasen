@@ -103,7 +103,7 @@ export default {
 }
 
 .poster h1 {
-  @apply mx-4 absolute;
+  @apply mx-4 absolute uppercase;
   top: 30%;
 }
 
@@ -123,7 +123,6 @@ export default {
   color: #0a2cca;
 }
 .poster.vvd h1 {
-  text-transform: uppercase;
 }
 
 .poster.pvda {
@@ -131,7 +130,6 @@ export default {
   color: white;
 }
 .poster.pvda h1 {
-  text-transform: uppercase;
 }
 
 .poster.groenlinks {
@@ -143,7 +141,6 @@ export default {
 .poster.cda h1 {
   background: #2cc84d;
   color: white;
-  text-transform: uppercase;
 }
 
 .poster.d66 {
@@ -153,6 +150,28 @@ export default {
 
 .poster.d66 h1 {
   text-transform: none;
+}
+
+.poster.fvd {
+  background: #911c12;
+}
+.poster.fvd h1 {
+  color: white;
+}
+
+.poster.denk {
+  background: #00b8b4;
+}
+.poster.denk h1 {
+  color: white;
+}
+
+.poster.pvv {
+  background: white;
+}
+.poster.pvv h1 {
+  color: white;
+  background: #03275b;
 }
 
 .option {
