@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full flex flex-col justify-center items-center">
     <div class="flex items-center flex-col">
       <img src="../assets/box.png" alt="Box" class="" />
       <h1>Holle Frasen</h1>

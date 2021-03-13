@@ -47,6 +47,11 @@ export default {
           options: ['vvd', 'pvda', 'cda', 'd66'],
           correct: 'pvda',
         },
+        {
+          slogan: 'Stem voor nieuw leiderschap',
+          options: ['vvd', 'pvda', 'cda', 'd66'],
+          correct: 'd66',
+        },
       ],
     };
   },

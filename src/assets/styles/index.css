@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply h-full;
+}
+
 body {
-  @apply bg-gray-100 text-center leading-normal;
+  @apply bg-gray-100 text-center leading-normal h-full;
 }
 
 h1 {
-  @apply text-2xl my-2 font-bold;
+  @apply text-3xl my-2 font-bold;
 }
 
 p {
-  @apply my-2;
+  @apply my-4;
 }
 
 .btn {
@@ -19,5 +23,5 @@ p {
 }
 
 #app {
-  @apply max-w-xl mx-auto;
+  @apply max-w-xl mx-auto p-4 h-full;
 }
