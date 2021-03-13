@@ -11,15 +11,15 @@
     <p>Deel je score:</p>
     <div class="share">
       <a
-        :href="`https://twitter.com/intent/tweet?text=Ik%20had%20${correct}%20van%20de%20${questionCount}%20partijen%20bij%20de%20slogans%20goed.&url=https%3A%2F%2Fwww.hollefrasen.nl&via=hollefrasen`"
+        :href="`https://twitter.com/intent/tweet?text=Ik%20had%20${correct}%20van%20de%20${questionCount}%20partijen%20bij%20de%20slogans%20goed.&url=https%3A%2F%2Fwww.hollefrasen.nl&via=hollefrase`"
         class="twitter"
         @click="share()"
       ></a>
-      <!-- <a
-        href="https://www.facebook.com/dialog/sharedisplay=popup&amp;href=https%3A%2F%2Fwww.hollefrasen.nl"
+      <a
+        href="https://www.facebook.com/dialog/share?app_id=1641639456124709&amp;display=popup&amp;href=https%3A%2F%2Fwww.hollefrasen.nl&amp;redirect_uri=https%3A%2F%2Fwww.hollefrasen.nl"
         class="facebook"
         @click="share()"
-      ></a> -->
+      ></a>
       <a
         :href="`whatsapp://send?text=Ik%20had%20${correct}%20van%20de%20${questionCount}%20partijen%20bij%20de%20slogans%20goed.%20https%3A%2F%2Fwww.hollefrasen.nl`"
         class="whatsapp"

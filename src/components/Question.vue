@@ -1,7 +1,9 @@
 <template>
   <div class="h-full flex flex-col items-center justify-center">
     <div class="poster">
-      <h1>{{ question.slogan }}</h1>
+      <h1>
+        <span v-html="question.slogan"></span>
+      </h1>
       <div
         class="logo"
         :style="{
@@ -9,19 +11,23 @@
         }"
       ></div>
     </div>
-    <div class="grid grid-cols-2 mt-4 md:flex md:justify-between">
+    <div
+      class="w-full grid grid-cols-2 gap-2 mt-4 justify-items-stretch md:flex"
+    >
       <button
-        class="option"
+        class="option md:flex-1"
         v-for="(option, index) in question.options"
         :option="option"
         :key="index"
         @click="setAnswer(index)"
       >
         <span class="icon"><i></i></span>
-        <span class="text">{{ option }}</span>
+        <span class="text text-sm pr-2 md:flex-1 md:text-center">{{
+          option
+        }}</span>
       </button>
     </div>
-    <button class="btn" @click="check()">{{ btnText }}</button>
+    <button class="btn disabled" @click="check()">{{ btnText }}</button>
   </div>
 </template>
 
@@ -45,12 +51,21 @@ export default {
       }
     },
     check() {
+      if (this.answer === null) {
+        this.$el.querySelectorAll('.option').forEach((el) => {
+          el.classList.add('highlight');
+          setTimeout(() => {
+            el.classList.remove('highlight');
+          }, 200);
+        });
+        return;
+      }
+
       if (this.checked) {
         this.$emit('next');
         return;
       }
 
-      console.log('check!');
       const options = this.$el.querySelectorAll('.option');
       if (this.question.correct == this.question.options[this.answer]) {
         options[this.answer].classList.toggle('correct');
@@ -68,6 +83,13 @@ export default {
       this.checked = true;
     },
     setAnswer(index) {
+      if (this.answer === null) {
+        this.$el.querySelector('.btn.disabled').classList.remove('disabled');
+      }
+      if (this.checked) {
+        return;
+      }
+
       this.answer = index;
 
       const poster = this.$el.querySelectorAll('.poster')[0];
@@ -98,12 +120,19 @@ export default {
 }
 
 .poster {
-  @apply shadow-lg relative flex justify-center items-center w-full;
+  @apply shadow-lg relative flex justify-center items-center w-full text-white;
   padding-bottom: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #777,
+    #777 8px,
+    #888 8px,
+    #888 16px
+  );
 }
 
 .poster h1 {
-  @apply mx-4 absolute uppercase;
+  @apply mx-4 absolute uppercase md:text-6xl;
   top: 30%;
 }
 
@@ -122,17 +151,9 @@ export default {
   background: white;
   color: #0a2cca;
 }
-.poster.vvd h1 {
-}
 
 .poster.pvda {
   background: #ff181e;
-  color: white;
-}
-.poster.pvda h1 {
-}
-
-.poster.groenlinks {
 }
 
 .poster.cda {
@@ -140,14 +161,12 @@ export default {
 }
 .poster.cda h1 {
   background: #2cc84d;
-  color: white;
 }
 
 .poster.d66 {
   background: white;
   color: black;
 }
-
 .poster.d66 h1 {
   text-transform: none;
 }
@@ -155,31 +174,55 @@ export default {
 .poster.fvd {
   background: #911c12;
 }
-.poster.fvd h1 {
-  color: white;
-}
 
 .poster.denk {
   background: #00b8b4;
-}
-.poster.denk h1 {
-  color: white;
 }
 
 .poster.pvv {
   background: white;
 }
 .poster.pvv h1 {
-  color: white;
   background: #03275b;
 }
 
-.option {
-  @apply m-2 bg-gray-300 flex items-center gap-2 uppercase;
+.poster.sp {
+  background: rgb(230, 27, 35);
 }
 
-.option .text {
-  @apply py-2 px-4;
+.poster.groenlinks {
+  background: #f9d4e6;
+}
+.poster.groenlinks h1 {
+  color: #019a40;
+}
+
+.poster.volt {
+  background: #5f288e;
+}
+
+.poster.christenunie {
+  background: linear-gradient(to right, #00a8ee 0%, #002a67 100%);
+}
+
+.poster.piratenpartij {
+  background: rgb(76, 37, 130);
+}
+
+.poster.ja21 {
+  background: white;
+  color: black;
+}
+
+.option {
+  @apply bg-gray-300 flex items-center gap-2 uppercase transition;
+}
+.option:hover {
+  @apply bg-gray-400;
+}
+
+.option.highlight {
+  @apply bg-red-300;
 }
 
 .option .icon {

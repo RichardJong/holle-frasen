@@ -38,29 +38,54 @@ export default {
       correct: 0,
       questions: this.shuffleArray([
         {
-          slogan: 'Samen sterker verder.',
+          slogan: 'Samen<br> sterker<br> verder.',
           options: ['vvd', 'pvda', 'cda', 'd66'],
           correct: 'vvd',
         },
         {
-          slogan: 'Samen sterker',
+          slogan: 'Voor een <br> eerlijke toekomst',
           options: ['vvd', 'pvda', 'cda', 'd66'],
           correct: 'pvda',
         },
         {
-          slogan: 'Stem voor nieuw leiderschap',
+          slogan: 'Stem voor<br> nieuw leiderschap',
           options: ['vvd', 'pvda', 'cda', 'd66'],
           correct: 'd66',
         },
         {
-          slogan: 'Wij gaan het doen',
+          slogan: 'Stem<br> Nederland<br> terug',
           options: ['cda', 'fvd', 'sp', 'denk'],
           correct: 'fvd',
         },
         {
-          slogan: 'Nederland weer van ons allemaal',
+          slogan: 'Nu<br> doorpakken',
+          options: ['vvd', 'sp', 'cda', 'd66'],
+          correct: 'cda',
+        },
+        {
+          slogan: 'Samen zijn wij<br>Nederland',
           options: ['pvv', 'fvd', 'vvd', 'denk'],
           correct: 'denk',
+        },
+        {
+          slogan: 'Meer toekomst',
+          options: ['volt', 'groenlinks', 'd66', 'denk'],
+          correct: 'groenlinks',
+        },
+        {
+          slogan: 'Kiezen voor<br> wat echt telt',
+          options: ['christenunie', 'cda', 'groenlinks', 'volt'],
+          correct: 'christenunie',
+        },
+        {
+          slogan: 'Wij fixen<br> die shit',
+          options: ['volt', 'pvv', 'fvd', 'piratenpartij'],
+          correct: 'piratenpartij',
+        },
+        {
+          slogan: 'Het juiste<br>antwoord',
+          options: ['piratenpartij', 'ja21', 'denk', 'd66'],
+          correct: 'ja21',
         },
       ]),
     };
@@ -75,15 +100,15 @@ export default {
       return arr.sort(() => Math.random() - 0.5);
     },
     start() {
-      console.log('test start');
+      // console.log('test start');
       this.view = 'question';
     },
     addCorrect() {
-      console.log('Added correct');
+      // console.log('Added correct');
       this.correct++;
     },
     next() {
-      console.log('next!');
+      // console.log('next!');
 
       if (this.questionIndex + 1 < this.questions.length) {
         this.questionIndex++;
