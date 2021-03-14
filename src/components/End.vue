@@ -4,12 +4,24 @@
       <img src="../assets/box.png" alt="Box" class="" />
       <h1>{{ correct }} / {{ questionCount }} goed!</h1>
     </div>
-    <p v-if="correct < questionCount">
-      Maar eigenlijk had je ze allemaal goed, want het maakt geen verschil.
-    </p>
+
     <p v-if="correct == questionCount">Je bent de slogankampioen!</p>
+    <p v-if="correct < questionCount && correct >= questionCount / 1.33">
+      Bijna allemaal goed, nog even oefenen!
+    </p>
+    <p v-if="correct < questionCount / 1.33 && correct >= questionCount / 2">
+      Tsja, ze lijken allemaal ook zo op elkaar!
+    </p>
+    <p v-if="correct < questionCount / 2 && correct >= questionCount / 4">
+      Oei, pas maar op dat je niet per ongeluk op de verkeerde partij stemt!
+    </p>
+    <p v-if="correct < questionCount / 4">
+      Je had er zo weinig goed, een gevaar voor de democratie! Misschien kun je
+      maar beter niet gaan stemmen...
+    </p>
+
     <p>Deel je score:</p>
-    <div class="share">
+    <div class="share flex justify-around w-9/12">
       <a
         :href="`https://twitter.com/intent/tweet?text=Ik%20had%20${correct}%20van%20de%20${questionCount}%20partijen%20bij%20de%20slogans%20goed.&url=https%3A%2F%2Fwww.hollefrasen.nl&via=hollefrase`"
         class="twitter"
@@ -31,6 +43,18 @@
         target="_blank"
       ></a>
     </div>
+
+    <p class="mt-8">
+      <b>Zelf een nietszeggende slogan tegengekomen?</b>
+      <br />
+      <a href="https://forms.gle/A7CCFWyVJGCR8twG7" target="_blank"
+        >Stuur jouw holle frase in</a
+      >
+    </p>
+
+    <p>
+      <a href="https://www.hollefrasen.nl">Speel opnieuw</a>
+    </p>
   </div>
 </template>
 
@@ -54,9 +78,6 @@ export default {
 </script>
 
 <style>
-.share {
-  @apply flex gap-4 justify-center;
-}
 .share a {
   display: block;
   width: 35px;

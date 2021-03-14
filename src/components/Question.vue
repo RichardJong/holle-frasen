@@ -27,7 +27,26 @@
         }}</span>
       </button>
     </div>
-    <button class="btn disabled" @click="check()">{{ btnText }}</button>
+    <button class="btn disabled" @click="check()">
+      {{ btnText }}
+      <svg
+        :class="{
+          hidden: !checked,
+          'inline-block h-4 w-4 animate-bounce-h': true,
+        }"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"
+        />
+      </svg>
+    </button>
   </div>
 </template>
 
@@ -212,6 +231,14 @@ export default {
 .poster.ja21 {
   background: white;
   color: black;
+}
+
+.poster.sgp {
+  background: #e95d0f;
+}
+
+.poster.nida {
+  background: linear-gradient(to bottom, #696da7 0%, #1a1b4d 100%);
 }
 
 .option.highlight {

@@ -87,7 +87,12 @@ export default {
           options: ['piratenpartij', 'ja21', 'denk', 'd66'],
           correct: 'ja21',
         },
-      ]),
+        {
+          slogan: 'Geloof in<br>jouw stem',
+          options: ['nida', 'sgp', 'cda', 'christenunie'],
+          correct: 'nida',
+        },
+      ]).slice(0, 10),
     };
   },
   computed: {
