@@ -31,7 +31,7 @@
         @click="share()"
       ></a>
       <a
-        href="https://www.facebook.com/dialog/share?app_id=1641639456124709&amp;display=popup&amp;href=https%3A%2F%2Fwww.hollefrasen.nl&amp;redirect_uri=https%3A%2F%2Fwww.hollefrasen.nl"
+        href="https://www.facebook.com/dialog/share?app_id=167253928560981&amp;display=popup&amp;href=https%3A%2F%2Fwww.hollefrasen.nl&amp;redirect_uri=https%3A%2F%2Fwww.hollefrasen.nl"
         class="facebook"
         @click="share()"
       ></a>
