@@ -1,7 +1,10 @@
 <template>
   <div class="h-full flex flex-col justify-center items-center">
     <div class="flex items-center flex-col">
-      <img src="../assets/box.png" alt="Box" class="" />
+      <div class="img">
+        <img src="../assets/box.png" alt="Box" :class="{ hidden: box2 }" />
+        <img src="../assets/box2.png" alt="Box" :class="{ hidden: !box2 }" />
+      </div>
       <h1>Holle Frasen</h1>
     </div>
     <p>
@@ -20,3 +23,28 @@ img {
   width: 100px;
 }
 </style>
+
+<script>
+export default {
+  name: 'Start',
+  data() {
+    return {
+      box2: false,
+    };
+  },
+  mounted() {
+    this.animate();
+  },
+  methods: {
+    animate() {
+      setTimeout(() => {
+        this.box2 = true;
+        setTimeout(() => {
+          this.box2 = false;
+          this.animate();
+        }, 100);
+      }, Math.random() * 1000);
+    },
+  },
+};
+</script>

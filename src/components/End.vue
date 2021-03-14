@@ -1,7 +1,10 @@
 <template>
   <div class="h-full flex flex-col items-center justify-center">
     <div class="flex items-center flex-col">
-      <img src="../assets/box.png" alt="Box" class="" />
+      <div class="img">
+        <img src="../assets/box.png" alt="Box" :class="{ hidden: box2 }" />
+        <img src="../assets/box2.png" alt="Box" :class="{ hidden: !box2 }" />
+      </div>
       <h1>{{ correct }} / {{ questionCount }} goed!</h1>
     </div>
 
@@ -55,6 +58,11 @@
     <p>
       <a href="https://www.hollefrasen.nl">Speel opnieuw</a>
     </p>
+
+    <p class="mt-8 text-gray-600 italic">
+      Doosje gemaakt door
+      <a href="https://www.astridannavanrooij.com/" target="_blank">Astrid</a>
+    </p>
   </div>
 </template>
 
@@ -62,6 +70,11 @@
 export default {
   name: 'End',
   props: ['correct', 'questionCount'],
+  data() {
+    return {
+      box2: false,
+    };
+  },
   methods: {
     share(e) {
       e.preventDefault();
@@ -73,6 +86,18 @@ export default {
       );
       return false;
     },
+    animate() {
+      setTimeout(() => {
+        this.box2 = true;
+        setTimeout(() => {
+          this.box2 = false;
+          this.animate();
+        }, 100);
+      }, Math.random() * 1000);
+    },
+  },
+  mounted() {
+    this.animate();
   },
 };
 </script>
