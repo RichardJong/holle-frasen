@@ -15,14 +15,14 @@
       class="w-full grid grid-cols-2 gap-2 mt-4 justify-items-stretch md:flex"
     >
       <button
-        class="option md:flex-1"
+        class="option bg-gray-300 flex items-center uppercase transition md:flex-1 hover:bg-gray-400"
         v-for="(option, index) in question.options"
         :option="option"
         :key="index"
         @click="setAnswer(index)"
       >
         <span class="icon"><i></i></span>
-        <span class="text text-sm pr-2 md:flex-1 md:text-center">{{
+        <span class="text text-sm px-2 md:flex-1 md:text-center">{{
           option
         }}</span>
       </button>
@@ -212,13 +212,6 @@ export default {
 .poster.ja21 {
   background: white;
   color: black;
-}
-
-.option {
-  @apply bg-gray-300 flex items-center gap-2 uppercase transition;
-}
-.option:hover {
-  @apply bg-gray-400;
 }
 
 .option.highlight {
