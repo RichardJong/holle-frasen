@@ -92,6 +92,11 @@ export default {
           options: ['nida', 'sgp', 'cda', 'christenunie'],
           correct: 'nida',
         },
+        {
+          slogan: 'Voor het<br>leven',
+          options: ['cda', 'sgp', 'pvdd', 'groenlinks'],
+          correct: 'sgp',
+        },
       ]).slice(0, 10),
     };
   },

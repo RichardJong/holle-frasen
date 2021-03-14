@@ -23,7 +23,7 @@ a {
 }
 
 .btn {
-  @apply my-4 bg-red-600 text-white font-bold uppercase px-4 py-2 rounded transition no-underline;
+  @apply my-3 md:my-4 bg-red-600 text-white font-bold uppercase px-4 py-2 rounded transition no-underline;
 }
 
 .btn.disabled {
@@ -31,5 +31,5 @@ a {
 }
 
 #app {
-  @apply max-w-xl mx-auto p-4 h-full;
+  @apply max-w-xl mx-auto p-4 pt-0 md:pt-4 h-full;
 }

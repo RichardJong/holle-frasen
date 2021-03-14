@@ -241,6 +241,11 @@ export default {
   background: linear-gradient(to bottom, #696da7 0%, #1a1b4d 100%);
 }
 
+.poster.pvdd {
+  background: white;
+  color: black;
+}
+
 .option.highlight {
   @apply bg-red-300;
 }
