@@ -15,7 +15,7 @@
       class="w-full grid grid-cols-2 gap-2 mt-4 justify-items-stretch md:flex"
     >
       <button
-        class="option bg-gray-300 flex items-center uppercase transition md:flex-1 hover:bg-gray-400"
+        class="option bg-gray-300 flex items-center uppercase transition md:flex-1"
         v-for="(option, index) in question.options"
         :option="option"
         :key="index"
@@ -95,7 +95,7 @@ export default {
         // Show correct option
         this.$el
           .querySelector('.option[option=' + this.question.correct + ']')
-          .classList.toggle('chosen');
+          .classList.toggle('corrected');
       }
 
       this.btnText = 'Verder';
@@ -287,6 +287,9 @@ export default {
 }
 .option.correct i:before {
   background-image: url(../assets/correct.png);
+}
+.option.corrected i:before {
+  background-image: url(../assets/corrected.png);
 }
 
 .option.correct .text {
