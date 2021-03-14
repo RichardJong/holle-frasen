@@ -178,7 +178,7 @@ export default {
 .poster.cda {
   background: white;
 }
-.poster.cda h1 {
+.poster.cda h1 span {
   background: #2cc84d;
 }
 
@@ -201,7 +201,7 @@ export default {
 .poster.pvv {
   background: white;
 }
-.poster.pvv h1 {
+.poster.pvv h1 span {
   background: #03275b;
 }
 

@@ -97,6 +97,11 @@ export default {
           options: ['cda', 'sgp', 'pvdd', 'groenlinks'],
           correct: 'sgp',
         },
+        {
+          slogan: 'Laat iedereen vrij<br>maar niemand vallen',
+          options: ['groenlinks', 'sp', 'cda', 'd66'],
+          correct: 'd66',
+        },
       ]).slice(0, 10),
     };
   },
