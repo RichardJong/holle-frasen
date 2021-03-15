@@ -63,6 +63,11 @@ export default {
           correct: 'cda',
         },
         {
+          slogan: 'Idealisme is het nieuwe<br>realisme',
+          options: ['pvdd', 'christenunie', 'groenlinks', 'd66'],
+          correct: 'pvdd',
+        },
+        {
           slogan: 'Samen zijn wij<br>Nederland',
           options: ['pvv', 'fvd', 'vvd', 'denk'],
           correct: 'denk',
@@ -102,7 +107,7 @@ export default {
           options: ['groenlinks', 'sp', 'cda', 'd66'],
           correct: 'd66',
         },
-      ]).slice(0, 10),
+      ]),
     };
   },
   computed: {
@@ -112,7 +117,9 @@ export default {
   },
   methods: {
     shuffleArray(arr) {
-      return arr.sort(() => Math.random() - 0.5);
+      arr.sort(() => Math.random() - 0.5);
+      console.log(arr.slice(0, 10));
+      return arr.slice(0, 10);
     },
     start() {
       // console.log('test start');
